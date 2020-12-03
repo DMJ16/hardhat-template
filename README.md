@@ -1,1 +1,1 @@
-# drop
+# hardhat-template

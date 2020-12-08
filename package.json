@@ -4,11 +4,12 @@
   "description": "",
   "scripts": {
     "build": "npm run clean && npm run compile",
-    "clean": "npx hardhat clean",
-    "compile": "npx hardhat compile",
-    "test": "npx hardhat test",
-    "test-fast": "TS_NODE_TRANSPILE_ONLY=1 npx hardhat test",
-    "coverage": "npm run build && npx hardhat coverage --temp artifacts --network coverage",
+    "clean": "hardhat clean",
+    "compile": "hardhat compile",
+    "typechain": "hardhat typechain",
+    "test": "hardhat test",
+    "test-fast": "TS_NODE_TRANSPILE_ONLY=1 hardhat test",
+    "coverage": "npm run build && hardhat coverage --temp artifacts --network coverage",
     "prettier": "prettier --write 'contracts/**/*.sol'"
   },
   "author": "David Josephs",

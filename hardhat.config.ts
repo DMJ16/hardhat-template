@@ -9,9 +9,8 @@ const config: HardhatUserConfig = {
   networks: {
     hardhat: {
       forking: {
-        url: `https://mainnet.infura.io/v3/${
-          process.env.RPC_API_KEY as string
-        }`,
+        url: process.env.ALCHEMY_RPC as string,
+        // blockNumber:
       },
     },
     // ropsten: {
@@ -31,18 +30,23 @@ const config: HardhatUserConfig = {
     compilers: [
       {
         version: "0.7.5",
+        settings: {
+          optimizer: {
+            enabled: true,
+            runs: 200,
+          },
+        },
       },
       {
         version: "0.6.12",
+        settings: {
+          optimizer: {
+            enabled: true,
+            runs: 200,
+          },
+        },
       },
     ],
-    settings: {
-      // https://hardhat.org/hardhat-network/#solidity-optimizer-support
-      optimizer: {
-        enabled: true,
-        runs: 200,
-      },
-    },
   },
   typechain: {
     outDir: "typechain",

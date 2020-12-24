@@ -1,6 +1,7 @@
 import "@nomiclabs/hardhat-waffle";
 import "@nomiclabs/hardhat-ethers";
 import "hardhat-typechain";
+import "solidity-coverage";
 import { HardhatUserConfig } from "hardhat/config";
 require("dotenv").config();
 
@@ -13,23 +14,23 @@ const config: HardhatUserConfig = {
         // blockNumber:
       },
     },
-    ropsten: {
-      url: `https://ropsten.infura.io/v3/${process.env.RPC_API_KEY as string}`,
-      accounts: [process.env.PRIVATE_KEY as string],
-    },
-    rinkeby: {
-      url: `https://rinkeby.infura.io/v3/${process.env.RPC_API_KEY as string}`,
-      accounts: [process.env.PRIVATE_KEY as string],
-    },
-    kovan: {
-      url: `https://kovan.infura.io/v3/${process.env.RPC_API_KEY as string}`,
-      accounts: [process.env.PRIVATE_KEY as string],
-    },
+    // ropsten: {
+    //   url: `https://ropsten.infura.io/v3/${process.env.RPC_API_KEY as string}`,
+    //   accounts: [process.env.PRIVATE_KEY as string],
+    // },
+    // rinkeby: {
+    //   url: `https://rinkeby.infura.io/v3/${process.env.RPC_API_KEY as string}`,
+    //   accounts: [process.env.PRIVATE_KEY as string],
+    // },
+    // kovan: {
+    //   url: `https://kovan.infura.io/v3/${process.env.RPC_API_KEY as string}`,
+    //   accounts: [process.env.PRIVATE_KEY as string],
+    // },
   },
   solidity: {
     compilers: [
       {
-        version: "0.7.5",
+        version: "0.7.6",
         settings: {
           optimizer: {
             enabled: true,

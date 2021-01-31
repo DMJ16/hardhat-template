@@ -1,22 +1,40 @@
-import {
-  BaseProvider,
-  InfuraProvider,
-  Provider,
-} from "@ethersproject/providers";
-import { Signer } from "@ethersproject/abstract-signer";
-import { Contract, ContractInterface } from "@ethersproject/contracts";
-import { Wallet } from "@ethersproject/wallet";
+import "dotenv/config";
+import { ethers } from "ethers";
 
-export const getInfuraProvider = (network: string = "homestead") => (
-  infuraProject_ID: string
-): BaseProvider => new InfuraProvider(network, { infura: infuraProject_ID });
+export function getInfuraProvider(
+  network: string = "homestead",
+  nodeProviderApiKey: string
+): ethers.providers.BaseProvider {
+  return new ethers.providers.InfuraProvider(network, nodeProviderApiKey);
+}
 
-export const getWallet = (network: string = "homestead") => (
-  pvtKey: string
-) => (infuraProject_ID: string): Wallet =>
-  new Wallet(pvtKey, getInfuraProvider(network)(infuraProject_ID));
+export function getAlchemyProvider(
+  network: string = "homestead",
+  nodeProviderApiKey: string
+): ethers.providers.BaseProvider {
+  return new ethers.providers.AlchemyProvider(network, nodeProviderApiKey);
+}
 
-export const getContract = (signerOrProvider: Signer | Provider) => (
-  contractAddress: string
-) => (contractABI: ContractInterface): Contract =>
-  new Contract(contractAddress, contractABI, signerOrProvider);
+export function getWallet(network: string = "homestead") {
+  return (useInfura: boolean) => (pvtKey: string): ethers.Wallet =>
+    useInfura
+      ? new ethers.Wallet(
+          pvtKey,
+          getInfuraProvider(network, process.env.INFURA_KEY as string)
+        )
+      : new ethers.Wallet(
+          pvtKey,
+          getAlchemyProvider(network, process.env.ALCHEMY_KEY as string)
+        );
+}
+
+export function getContract(
+  signerOrProvider: ethers.Signer | ethers.providers.Provider
+) {
+  return function getContractWithSigner(
+    address: string,
+    abi: ethers.ContractInterface
+  ): ethers.Contract {
+    return new ethers.Contract(address, abi, signerOrProvider);
+  };
+}

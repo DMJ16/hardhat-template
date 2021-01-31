@@ -1,18 +1,28 @@
+import "dotenv/config";
 import { ethers } from "hardhat";
-// import {  } from "../typechain";
+import { Signer } from "ethers";
+import { getWallet } from "../utils/helpers";
 
-const main = async (): Promise<void> => {
-  //   const factory = (await ethers.getContractFactory(
-  //     ""
-  //   )) as ;
-  //   const contract = await factory.deploy();
-  //   await contract.deployed();
-  //   console.log("Contract deployed to:", contract.address);
-};
+const contractName = "";
+const constructorParams: any[] = [];
+const wallet = getWallet(process.env.NETWORK as string)(false)(
+  process.env.DEV_PRIVATE_KEY as string
+);
 
-main()
+async function main(
+  contractName: string,
+  constructorParams?: any[],
+  signer?: Signer
+): Promise<void> {
+  const factory = await ethers.getContractFactory(contractName, signer);
+  const contract = await factory.deploy(...constructorParams!);
+  await contract.deployed();
+  console.log("Contract deployed to:", contract.address);
+}
+
+main(contractName, constructorParams, wallet)
   .then(() => process.exit(0))
-  .catch((error) => {
-    console.error(error);
+  .catch((err) => {
+    console.error(err);
     process.exit(1);
   });

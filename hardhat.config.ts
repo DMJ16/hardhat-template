@@ -10,25 +10,34 @@ const config: HardhatUserConfig = {
   networks: {
     hardhat: {
       forking: {
-        url: process.env.ALCHEMY_RPC as string,
+        url: process.env.ALCHEMY_URL as string,
         // blockNumber:
       },
     },
     // ropsten: {
-    //   url: `https://ropsten.infura.io/v3/${process.env.RPC_API_KEY as string}`,
-    //   accounts: [process.env.PRIVATE_KEY as string],
+    //   url: process.env.ALCHEMY_URL as string,
+    //   accounts: [process.env.DEV_PRIVATE_KEY as string],
     // },
     // rinkeby: {
-    //   url: `https://rinkeby.infura.io/v3/${process.env.RPC_API_KEY as string}`,
-    //   accounts: [process.env.PRIVATE_KEY as string],
+    //   url: process.env.ALCHEMY_URL as string,
+    //   accounts: [process.env.DEV_PRIVATE_KEY as string],
     // },
     // kovan: {
-    //   url: `https://kovan.infura.io/v3/${process.env.RPC_API_KEY as string}`,
-    //   accounts: [process.env.PRIVATE_KEY as string],
+    //   url: process.env.ALCHEMY_URL as string,
+    //   accounts: [process.env.DEV_PRIVATE_KEY as string],
     // },
   },
   solidity: {
     compilers: [
+      {
+        version: "0.8.0",
+        settings: {
+          optimizer: {
+            enabled: true,
+            runs: 200,
+          },
+        },
+      },
       {
         version: "0.7.6",
         settings: {

@@ -10,7 +10,9 @@
     "test": "hardhat test",
     "test-fast": "TS_NODE_TRANSPILE_ONLY=1 hardhat test",
     "coverage": "npm run build && hardhat coverage --temp artifacts --network coverage",
-    "prettier": "prettier --write 'contracts/**/*.sol'"
+    "prettier": "prettier --write 'contracts/**/*.sol'",
+    "deploy": "hardhat run scripts/deploy.ts",
+    "deploy-kovan": "hardhat run --network kovan scripts/deploy.ts"
   },
   "author": "David Josephs",
   "license": "MIT",

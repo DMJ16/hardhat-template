@@ -3,16 +3,16 @@
   "version": "0.0.1",
   "description": "",
   "scripts": {
-    "build": "npm run clean && npm run compile",
+    "build": "yarn clean && yarn compile",
     "clean": "hardhat clean",
     "compile": "hardhat compile",
-    "typechain": "hardhat typechain",
-    "test": "hardhat test",
-    "test-fast": "TS_NODE_TRANSPILE_ONLY=1 hardhat test",
-    "coverage": "npm run build && hardhat coverage --temp artifacts --network coverage",
-    "prettier": "prettier --write 'contracts/**/*.sol'",
+    "coverage": "yarn build && hardhat coverage --temp artifacts",
     "deploy": "hardhat run scripts/deploy.ts",
-    "deploy-kovan": "hardhat run --network kovan scripts/deploy.ts"
+    "deploy-kovan": "hardhat run --network kovan scripts/deploy.ts",
+    "prettier": "prettier --write 'contracts/**/*.sol'",
+    "test": "yarn clean && hardhat test",
+    "test-fast": "TS_NODE_TRANSPILE_ONLY=1 hardhat test",
+    "typechain": "hardhat typechain"
   },
   "author": "David Josephs",
   "license": "MIT",

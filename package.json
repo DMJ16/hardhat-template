@@ -4,8 +4,8 @@
   "description": "",
   "scripts": {
     "build": "yarn clean && yarn compile",
-    "clean": "hardhat clean",
-    "compile": "hardhat compile",
+    "clean": "rimraf ./cache && rimraf ./artifacts",
+    "compile": "yarn clean && hardhat compile",
     "coverage": "yarn build && hardhat coverage --temp artifacts",
     "deploy": "hardhat run scripts/deploy.ts",
     "deploy-kovan": "hardhat run --network kovan scripts/deploy.ts",

@@ -2,6 +2,7 @@ import "@nomiclabs/hardhat-waffle";
 import "@nomiclabs/hardhat-ethers";
 import "@typechain/hardhat";
 import "solidity-coverage";
+import "hardhat-gas-reporter";
 import { HardhatUserConfig } from "hardhat/config";
 require("dotenv").config();
 
@@ -58,9 +59,8 @@ const config: HardhatUserConfig = {
       },
     ],
   },
-  typechain: {
-    outDir: "typechain",
-    target: "ethers-v5",
+  gasReporter: {
+    enabled: process.env.REPORT_GAS ? true : false,
   },
 };
 

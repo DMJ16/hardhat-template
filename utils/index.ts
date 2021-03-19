@@ -3,4 +3,5 @@ export {
   getAlchemyProvider,
   getWallet,
   getContract,
+  getTxEventData,
 } from "./helpers";

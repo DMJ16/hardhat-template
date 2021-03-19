@@ -1,5 +1,5 @@
 import "dotenv/config";
-import { ethers } from "ethers";
+import { ContractTransaction, ethers } from "ethers";
 
 export function getInfuraProvider(
   network: string = "homestead",
@@ -37,4 +37,15 @@ export function getContract(
   ): ethers.Contract {
     return new ethers.Contract(address, abi, signerOrProvider);
   };
+}
+
+export async function getTxEventData(
+  input: ContractTransaction | Promise<ContractTransaction>
+): Promise<any> {
+  const tx = (input &&
+  Object.prototype.toString.call(input) === "[object Promise]"
+    ? await input
+    : input) as ContractTransaction;
+  const { logs } = await tx.wait();
+  return logs[logs.length - 1].data;
 }

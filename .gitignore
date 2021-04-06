@@ -1,9 +1,14 @@
+#folders
 node_modules
-**.env
-
-#Hardhat files
+build
+coverage
+dist
+typechain
 cache
 artifacts
+
+#files
+**.env
 
 #yarn 
 .yarn/*

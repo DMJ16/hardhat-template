@@ -1,6 +1,6 @@
 # hardhat-template
 
-Acknowledgements: [@PaulRBerg's](https://twitter.com/PaulRBerg) incredible [solidity-template](https://github.com/paulrberg/solidity-template).
+Acknowledgements: [@PaulRBerg's](https://twitter.com/PaulRBerg) incredible [solidity-template](https://github.com/paulrberg/solidity-template)
 
 ## Usage
 

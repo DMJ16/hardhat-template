@@ -14,7 +14,7 @@
     "typechain": "hardhat typechain"
   },
   "author": "David Josephs",
-  "license": "agpl-3.0",
+  "license": "MIT",
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.1",
     "@nomiclabs/hardhat-etherscan": "^2.1.2",

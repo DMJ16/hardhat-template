@@ -7,7 +7,7 @@ import "@nomiclabs/hardhat-etherscan";
 import { HardhatUserConfig } from "hardhat/config";
 require("dotenv").config();
 
-const URL = process.env.INFURA_URL ?? "";
+const URL = process.env.ALCHEMY_URL ?? "";
 const DEV_PRIVATE_KEY = process.env.DEV_PRIVATE_KEY ?? "";
 const GAS_REPORTER_ENABLED = process.env.REPORT_GAS ? true : false;
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY ?? "";

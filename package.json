@@ -19,26 +19,26 @@
     "@nomiclabs/hardhat-ethers": "^2.0.1",
     "@nomiclabs/hardhat-etherscan": "^2.1.2",
     "@nomiclabs/hardhat-waffle": "^2.0.0",
-    "@typechain/ethers-v5": "^6.0.5",
-    "@typechain/hardhat": "^1.0.1",
-    "@types/chai": "^4.2.17",
+    "@typechain/ethers-v5": "^7.0.0",
+    "@typechain/hardhat": "^2.0.0",
+    "@types/chai": "^4.2.18",
     "@types/mocha": "^8.2.2",
-    "@types/node": "^15.0.0",
+    "@types/node": "^15.0.2",
     "chai": "^4.3.4",
-    "dotenv": "^8.2.0",
+    "dotenv": "^9.0.1",
     "ethereum-waffle": "^3.2.1",
     "ethers": "^5.1.4",
     "hardhat": "^2.2.1",
     "hardhat-gas-reporter": "^1.0.4",
-    "prettier": "^2.2.1",
+    "prettier": "^2.3.0",
     "prettier-plugin-solidity": "^1.0.0-beta.10",
     "solidity-coverage": "^0.7.13",
     "ts-generator": "^0.1.1",
     "ts-node": "^9.0.0",
-    "typechain": "^4.0.0",
+    "typechain": "^5.0.0",
     "typescript": "^4.2.4"
   },
   "dependencies": {
-    "@openzeppelin/contracts": "^4.0.0"
+    "@openzeppelin/contracts": "^4.1.0"
   }
 }

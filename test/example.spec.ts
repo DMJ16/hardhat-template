@@ -4,10 +4,8 @@ import { expect } from "chai";
 // import {} from "../typechain";
 
 describe("Example", () => {
-  let signers: Signer[];
-  let admin: Signer;
-  let adminAddress: string;
-  // let ContractFactory: Contract__factory;
+  let signers: Signer[], admin: Signer, adminAddress: string;
+  // let ContractFactory: Contract__factory,
   // let contract: Contract;
 
   beforeEach(async () => {

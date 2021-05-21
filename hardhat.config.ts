@@ -16,7 +16,7 @@ const COMPILER_SETTINGS = [
   settings: {
     optimizer: {
       enabled: true,
-      runs: 1_000_000,
+      runs: 200,
     },
     metadata: {
       bytecodeHash: "none",

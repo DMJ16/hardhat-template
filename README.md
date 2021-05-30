@@ -1,4 +1,6 @@
-# hardhat-template
+ # <h1 align="center"> hardhat-template </h1>
+
+![GitHub Actions](https://github.com/dmj16/hardhat-template/actions/workflows/node.js.yml/badge.svg)
 
 Acknowledgements: [@PaulRBerg's](https://twitter.com/PaulRBerg) incredible [solidity-template](https://github.com/paulrberg/solidity-template)
 

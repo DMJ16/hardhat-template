@@ -1,25 +1,22 @@
 import "dotenv/config";
 import { ethers } from "hardhat";
-import { Signer, Wallet, providers } from "ethers";
 
 const name = "";
+const network = "";
+const provider = new ethers.providers.JsonRpcProvider(
+  `https://${network}.infura.io/v3/${process.env.INFURA_API_KEY}`
+);
+const wallet = new ethers.Wallet(process.env.DEV_PRIVATE_KEY ?? "", provider);
 const constructorParams: any[] = [];
-const provider = new providers.JsonRpcProvider(process.env.INFURA_URL);
-const wallet = new Wallet(process.env.DEV_PRIVATE_KEY ?? "", provider);
 
-async function deploy(
-  name: string,
-  _constructorParams: any[],
-  signer: Signer
-): Promise<void> {
-  const constructorParams = _constructorParams ?? [];
-  const factory = await ethers.getContractFactory(name, signer);
+async function deploy(): Promise<void> {
+  const factory = await ethers.getContractFactory(name, wallet);
   const contract = await factory.deploy(...constructorParams);
   await contract.deployed();
-  console.log("Contract deployed to:", contract.address);
+  console.log("Contract deployed at:", contract.address);
 }
 
-deploy(name, constructorParams, wallet)
+deploy()
   .then(() => process.exit(0))
   .catch((err) => {
     console.error(err);

@@ -1,3 +1,3 @@
-export default {
-  skipFiles: ["contracts/mocks/**.sol"],
+module.exports = {
+  skipFiles: ["mocks"],
 };

@@ -5,7 +5,7 @@
   "scripts": {
     "clean": "rimraf ./cache && rimraf ./artifacts",
     "compile": "yarn clean && hardhat compile",
-    "coverage": "yarn compile && hardhat coverage --temp artifacts",
+    "coverage": "hardhat coverage --solcoverjs ./.solcover.js --temp artifacts",
     "deploy": "hardhat run scripts/deploy.ts",
     "prettier": "prettier --write 'contracts/**/*.sol'",
     "test": "hardhat test test/*.ts",

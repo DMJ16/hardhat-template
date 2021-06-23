@@ -6,7 +6,6 @@
     "clean": "rimraf ./cache && rimraf ./artifacts",
     "compile": "yarn clean && hardhat compile",
     "coverage": "yarn compile && hardhat coverage --solcoverjs ./.solcover.js --temp artifacts",
-    "deploy": "hardhat run scripts/deploy.ts",
     "prettier": "prettier --write 'contracts/**/*.sol'",
     "test": "hardhat test test/*.ts",
     "test-fast": "TS_NODE_TRANSPILE_ONLY=1 hardhat test test/*.ts",

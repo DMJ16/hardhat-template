@@ -1,4 +1,4 @@
- # <h1 align="center"> hardhat-template </h1>
+# <h1 align="center"> hardhat-template </h1>
 
 ![GitHub Actions](https://github.com/dmj16/hardhat-template/actions/workflows/node.js.yml/badge.svg)
 
@@ -30,17 +30,6 @@ yarn compile
 ```sh
 yarn coverage
 ```
-
-### Deploy
-
-1. Configure deploy.ts script
-2. Run below command to deploy contract to Ethereum mainnet
-
-```sh
-yarn deploy
-```
-
-**Notice: write your own testnet deployment script + command as needed**
 
 ### Prettier
 
